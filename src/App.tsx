@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import { Bookmark, User } from './types';
-import { BookmarkCard } from './components/BookmarkCard';
+import { Bookmark as BookmarkIcon, LogOut } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
 import { AddBookmarkForm } from './components/AddBookmarkForm';
 import { AuthForm } from './components/AuthForm';
-import { Bookmark as BookmarkIcon, LogOut } from 'lucide-react';
+import { BookmarkCard } from './components/BookmarkCard';
 import { supabase } from './lib/supabase';
-import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
